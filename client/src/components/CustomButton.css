@@ -1,0 +1,17 @@
+.custom-btn {
+  padding: 0.5rem 2rem;
+  font-size: 0.8rem;
+}
+
+.custom-primary-btn{
+  border: 0.15rem solid coral;
+  border-radius: 5rem;
+  color: coral;
+}
+
+.custom-secondary-btn{
+  background-color: coral;
+  color: #ffffff;
+  border: 0.15rem solid coral;
+  border-radius: 5rem;
+}

@@ -1,0 +1,41 @@
+.primary-option{
+  border: coral 1rem solid ;
+}
+.option{
+  text-align: left;      
+  display: inline-block;
+  border: none;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+}
+.primary-option-frame{
+  border: 0.15rem solid rgb(95, 95, 95);
+  border-radius: 0.45rem;
+  padding: 0.09rem;
+  display: flex;
+  column-gap:0.25rem;
+  align-items: center;
+}
+.btn-border-correct{
+  border: 0.15rem solid limegreen;
+}
+.option-num{
+  background-color:rgb(216, 216, 216);
+  font-size: .85rem;
+  border-radius: 0.25rem;
+  padding: .5rem;
+  min-width: 2rem;
+  text-align: center;
+}
+.tertiary-option-frame{
+  background-color: #F1F1F1;
+  border-radius: 0.15rem;
+  padding: 0.09rem;
+  display: flex;
+  column-gap:0.25rem;
+  align-items: center;
+}
+.tertiary-option{
+  padding: 0.1rem 1rem;
+  font-size: 0.75rem;
+}
