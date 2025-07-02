@@ -1,7 +1,7 @@
 import React from "react";
-import "./Home.css";
-import CustomOption from "../components/CustomOption";
-import CustomButton from "../components/CustomButton";
+import "./QuizDisplay";
+import CustomOption from "../../components/CustomOption";
+import CustomButton from "../../components/CustomButton";
 
 const QuestionsDisplay = () => {
   return (

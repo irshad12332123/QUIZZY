@@ -1,6 +1,7 @@
 import React from "react";
 import "./CustomButton.css";
-const CustomButton = ({ text, type }) => {
+import { Link } from "react-router-dom";
+const CustomButton = ({ text, type, link }) => {
   return (
     <>
       <button className={`custom-btn custom-${type}-btn `}>{text}</button>

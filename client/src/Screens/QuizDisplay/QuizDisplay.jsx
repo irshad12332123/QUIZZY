@@ -1,9 +1,8 @@
-import React from "react";
 import QuestionsDisplay from "./QuestionsDisplay";
 import ScoreBoard from "./ScoreBoard";
-import "./Home.css";
-import Nav from "./Nav/Nav";
-const Home = () => {
+import "./QuizDisplay.css";
+import Nav from "../Nav/Nav";
+const QuizDisplay = () => {
   return (
     <div className="main-frame">
       <Nav />
@@ -15,4 +14,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default QuizDisplay;

@@ -1,6 +1,6 @@
 import React from "react";
-import "./Home.css";
-import CustomOption from "../components/CustomOption";
+import "./QuizDisplay";
+import CustomOption from "../../components/CustomOption";
 
 const ScoreBoard = () => {
   return (
