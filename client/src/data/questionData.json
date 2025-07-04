@@ -1,0 +1,59 @@
+{
+  "G.k": [
+    {
+      "questionId": 1,
+      "question": "What is the capital of India?",
+      "options": {
+        "A": "Mumbai",
+        "B": "New Delhi",
+        "C": "Kolkata",
+        "D": "Chennai"
+      },
+      "ans": "B"
+    },
+    {
+      "questionId": 2,
+      "question": "Which planet is known as the Red Planet?",
+      "options": {
+        "A": "Venus",
+        "B": "Mars",
+        "C": "Jupiter",
+        "D": "Saturn"
+      },
+      "ans": "B"
+    },
+    {
+      "questionId": 3,
+      "question": "Who wrote the national anthem of India?",
+      "options": {
+        "A": "Rabindranath Tagore",
+        "B": "Bankim Chandra Chatterjee",
+        "C": "Mahatma Gandhi",
+        "D": "Sarojini Naidu"
+      },
+      "ans": "A"
+    },
+    {
+      "questionId": 4,
+      "question": "Which is the largest ocean on Earth?",
+      "options": {
+        "A": "Atlantic Ocean",
+        "B": "Indian Ocean",
+        "C": "Arctic Ocean",
+        "D": "Pacific Ocean"
+      },
+      "ans": "D"
+    },
+    {
+      "questionId": 5,
+      "question": "Who was the first President of India?",
+      "options": {
+        "A": "Jawaharlal Nehru",
+        "B": "B. R. Ambedkar",
+        "C": "Dr. Rajendra Prasad",
+        "D": "Sarvepalli Radhakrishnan"
+      },
+      "ans": "C"
+    }
+  ]
+}
