@@ -1,0 +1,18 @@
+.card-frame{
+  background-color: rgba(255, 0, 0, 0.432);
+  border: 0.15rem solid rgb(74, 0, 0);
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  flex-direction: column ;
+  justify-content: center;
+}
+
+.secondary-card-frame{
+  background-color: rgba(38, 255, 0, 0.662);
+  border: 0.15rem solid rgb(49, 89, 0);
+}
+
+.card-frame p{
+  margin: 0;
+}

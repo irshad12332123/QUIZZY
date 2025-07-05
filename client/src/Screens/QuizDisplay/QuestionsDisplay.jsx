@@ -3,14 +3,20 @@ import "./QuizDisplay";
 import CustomOption from "../../components/CustomOption";
 import CustomButton from "../../components/CustomButton";
 import data from "../../data/questionData.json";
-const QuestionsDisplay = () => {
+
+const QuestionsDisplay = ({
+  questionStatuses,
+  setQuestionStatuses,
+  setIsCompleted,
+  setUserScoreDetails,
+}) => {
   const [questionNumberIncrementer, setQuestionNumberIncrementer] = useState(0);
   const [question, setQuestion] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedOption, setSelectedOption] = useState(null);
-  const [isOptionCorrect, setIsOptionCorrect] = useState(false);
   const [error, setError] = useState(null);
-
+  const [btnText, setBtnText] = useState("Next");
+  const [correctAns, setCorrectAns] = useState(0);
   useEffect(() => {
     setQuestion(data["G.k"][questionNumberIncrementer]);
     setIsLoading(false);
@@ -18,20 +24,43 @@ const QuestionsDisplay = () => {
     setError(null);
   }, [questionNumberIncrementer]);
 
-  // Check if the selcted answer is correct/wrong!
-  const checkAnswer = (chosedOption) => {
-    setSelectedOption(chosedOption);
+  const checkAnswer = (chosenOption) => {
+    if (selectedOption) {
+      setError("You have already chosen an option!");
+      return;
+    }
+
+    setSelectedOption(chosenOption);
+    const isCorrect = chosenOption === question["ans"];
+
+    // increment the correctAns to get the total correct answers
+    if (isCorrect) {
+      setCorrectAns((prev) => prev + 1);
+    }
+    const updatedStatuses = [...questionStatuses];
+    updatedStatuses[questionNumberIncrementer] = isCorrect
+      ? "correct"
+      : "wrong";
+
+    setQuestionStatuses(updatedStatuses);
   };
 
-  // Switch to next question!
   const handleNext = () => {
     if (!selectedOption) {
       setError("Please select an option!");
       return;
     }
-    let count = questionNumberIncrementer;
-    count++;
-    setQuestionNumberIncrementer(count);
+    questionNumberIncrementer === 3 ? setBtnText("Subit") : "Next";
+    setQuestionNumberIncrementer((prev) => prev + 1);
+  };
+
+  const handleSubmit = () => {
+    setIsCompleted(true);
+    setUserScoreDetails([
+      questionNumberIncrementer + 1, // total questions
+      correctAns, // number of correct answers
+      questionNumberIncrementer + 1 - 1, // number of wrong aswers
+    ]);
   };
 
   const getOptionStatus = (optionKey) => {
@@ -70,30 +99,34 @@ const QuestionsDisplay = () => {
           <CustomOption
             text={question["options"]["B"]}
             optionNameRequired
-            option="B"
             handleClick={() => checkAnswer("B")}
             optionChecker={getOptionStatus("B")}
           />
           <CustomOption
             text={question["options"]["C"]}
             optionNameRequired
-            option="C"
             handleClick={() => checkAnswer("C")}
             optionChecker={getOptionStatus("C")}
           />
           <CustomOption
             text={question["options"]["D"]}
             optionNameRequired
-            option="D"
             handleClick={() => checkAnswer("D")}
             optionChecker={getOptionStatus("D")}
           />
         </div>
         <CustomButton
           type={"secondary"}
-          text={"Next"}
-          handleClick={handleNext}
+          text={btnText}
+          handleClick={
+            questionNumberIncrementer === 4 ? handleSubmit : handleNext
+          }
         />
+        {error && (
+          <div className="error-message" style={{ color: "red" }}>
+            {error}
+          </div>
+        )}
       </div>
     </div>
   );

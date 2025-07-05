@@ -6,8 +6,7 @@ const Nav = () => {
     <div className="nav">
       <h5>Quizzy</h5>
       <div className="links">
-        <CustomButton text={"About"} type={"primary"} />
-        <CustomButton text={"Feedback"} type={"secondary"} />
+        <CustomButton text={"Made by Irshad ❤️"} type={"secondary"} />
       </div>
     </div>
   );

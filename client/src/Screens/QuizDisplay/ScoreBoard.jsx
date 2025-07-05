@@ -2,17 +2,22 @@ import React from "react";
 import "./QuizDisplay";
 import CustomOption from "../../components/CustomOption";
 
-const ScoreBoard = () => {
+const ScoreBoard = ({ questionStatuses }) => {
+  const totalQuestions = 5;
+
   return (
     <div className="score-board">
       <div className="list-questions-done">
         <h5>Quiz Questions list</h5>
         <div className="questions-options-list">
-          <CustomOption text={"Quix question 1"} type="tertiary" />
-          <CustomOption text={"Quix question 2"} type="tertiary" />
-          <CustomOption text={"Quix question 3"} type="tertiary" />
-          <CustomOption text={"Quix question 4"} type="tertiary" />
-          <CustomOption text={"Quix question 5"} type="tertiary" />
+          {[...Array(totalQuestions)].map((_, index) => (
+            <CustomOption
+              key={index}
+              text={`Quiz question ${index + 1}`}
+              type="tertiary"
+              optionChecker={questionStatuses[index] || "normal"}
+            />
+          ))}
         </div>
       </div>
     </div>
